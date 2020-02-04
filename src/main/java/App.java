@@ -31,7 +31,7 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             ArrayList<Hero> Hero = Hero.getAll();
             model.put("Hero", Hero);
-            model.put("Squads", Squad.getallSquads());
+            model.put("Squads", Squad.getAllSquads());
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
         get("/hero", (req, res) -> {
@@ -135,7 +135,7 @@ public class App {
             String weakness = req.queryParams("weakness");
             int age = Integer.parseInt(req.queryParams("age"));
             int idSquad = Integer.parseInt(req.queryParams("idSquad"));
-            Hero hero = new Hero(name, ability, weakness, age, idSquad);
+            Hero Hero = new Hero(name, ability, weakness, age, idSquad);
             ArrayList<Hero> heroes = Hero.getAll();
             model.put("heroes", heroes);
             model.put("squads", Squad.getAllSquads());
