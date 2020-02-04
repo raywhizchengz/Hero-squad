@@ -135,7 +135,7 @@ public class App {
             String weakness = req.queryParams("weakness");
             int age = Integer.parseInt(req.queryParams("age"));
             int idSquad = Integer.parseInt(req.queryParams("idSquad"));
-            Hero Hero = new Hero(name, ability, weakness, age, idSquad);
+            Hero hero = new Hero(name, age, ability, weakness,  idSquad);
             ArrayList<Hero> heroes = Hero.getAll();
             model.put("heroes", heroes);
             model.put("squads", Squad.getAllSquads());
