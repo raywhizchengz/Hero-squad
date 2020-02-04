@@ -10,7 +10,7 @@ import static junit.framework.TestCase.assertTrue;
 public class SquadTest {
     @After
     public void tearDown() {
-        Squad.clearAll(); //clear out all the posts before each test.
+        Squad.clearAll();
     }
     @Test
     public void testSquad_instanciatesCorrectly_true() throws Exception {

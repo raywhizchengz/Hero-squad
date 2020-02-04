@@ -1,23 +1,18 @@
 {{#partial "content"}}
-    <div class="row">
-        <ul >
 
-            {{#if foundHero}}
-                <p class="font-weight-bold">Name: {{ foundHero.name }}</p>
-                <p class="font-weight-bold">Age: {{ foundHero.age }}</p>
-                <p class="font-weight-bold">Special Power: {{ foundHero.specialPower }}</p>
-                <p class="font-weight-bold">Weakness: {{ foundHero.weakness }}</p>
-                <p class="font-weight-bold">Squad: {{ foundHero.name }}</p>
+    <h1>ALl Heroes</h1>
+    {{#if heroes}}
+        <div class="row">
+            <ul >
+                {{#each heroes}}
+                    <li><a href="/hero-details/{{id}}">{{name}}</a></li>
+                {{/each}}
+            </ul>
 
-                <p>
-                    <!--                <a class="btn btn-outline-primary" href="/hero/{{id}}/update">Edit Hero Details</a>-->
-                    <a class="btn btn-outline-danger" href="/heroes/{{id}}/delete">REMOVE HERO</a>
-                </p>
-            {{/if}}
-        </ul>
-
-    </div>
+        </div>
+    {{else}}
+        <p style="color:white;">No Heroes Yet.</p>
+    {{/if}}
 
 {{/partial}}
-
-{{> layout.hbs}}
+{{> layout.hbs }}
