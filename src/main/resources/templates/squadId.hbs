@@ -1,0 +1,18 @@
+
+{{#partial "content"}}
+    {{#each squads}}
+        <p class="font-weight-bold">Name: {{ name }}</p>
+        <p class="font-weight-bold">Cause: {{ cause}}</p>
+        <p class="font-weight-bold">maxSize: {{ maxSize }}</p>
+
+
+        <p>
+            <!--            <a class="btn btn-outline-primary" href="/squad/{{id}}/update">Edit Squad Details</a>-->
+            <a class="btn btn-outline-danger" href="/squads/{{id}}/delete">REMOVE SQUAD</a>
+        </p>
+    {{/each}}
+
+
+{{/partial}}
+
+{{> layout.hbs}}

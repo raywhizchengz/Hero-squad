@@ -73,7 +73,7 @@ public class App {
             model.put("squads", Squad.getAllSquads());
             return new ModelAndView(model, "heroInfo.hbs");
         }, new HandlebarsTemplateEngine());
-        get("/squad-details/:id", (req, res) -> {
+        get("/squad-Id/:id", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             int squadId = Integer.parseInt(req.queryParams("id"));
             Squad availableSquad = Squad.getSquadById(squadId);
