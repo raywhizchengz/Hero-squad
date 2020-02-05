@@ -50,7 +50,7 @@ public class App {
         }, new HandlebarsTemplateEngine());
         get("/squads/:id", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            int squadId = Integer.parseInt(req.params("id"));
+            int squadId = Integer.parseInt(req.queryParams("id"));
             Squads availableSquads = Squad.getSquadById(squadId);
             model.put("availableSquads", availableSquads);
             return new ModelAndView(model, "details.hbs");
@@ -67,7 +67,7 @@ public class App {
         }, new HandlebarsTemplateEngine());
         get("/heroInfo/:id", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            int HeroId = Integer.parseInt(req.params("id"));
+            int HeroId = Integer.parseInt(req.queryParams("id"));
             Hero availableHero = Hero.getHeroById(HeroId);
             model.put("availableHero", availableHero);
             model.put("squads", Squad.getAllSquads());
@@ -75,7 +75,7 @@ public class App {
         }, new HandlebarsTemplateEngine());
         get("/squad-details/:id", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            int squadId = Integer.parseInt(req.params("id"));
+            int squadId = Integer.parseInt(req.queryParams("id"));
             Squad availableSquad = Squad.getSquadById(squadId);
             model.put("availableSquad", availableSquad);
             model.put("Squads", Squad.getAllSquads());
@@ -83,28 +83,28 @@ public class App {
         }, new HandlebarsTemplateEngine());
         get("/hero/:id/update", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            int editHeroId = Integer.parseInt(req.params("id"));
+            int editHeroId = Integer.parseInt(req.queryParams(""));
             Hero editHero = Hero.getHeroById(editHeroId);
             model.put("editHero", editHero);
             return new ModelAndView(model, "updateHero.hbs");
         }, new HandlebarsTemplateEngine());
         get("/squad/:id/update", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            int editSquadId = Integer.parseInt(req.params("id"));
+            int editSquadId = Integer.parseInt(req.queryParams("id"));
             Hero editSquad = Hero.getHeroById(editSquadId);
             model.put("editSquad", editSquad);
             return new ModelAndView(model, "updateSquad.hbs");
         }, new HandlebarsTemplateEngine());
         get("/squads/:id/delete", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            int deleteSquadId = Integer.parseInt(req.params("id"));
+            int deleteSquadId = Integer.parseInt(req.queryParams("id"));
             Squad deleteSquad = Squad.getSquadById(deleteSquadId);
             deleteSquad.deleteSquadById();
             return new ModelAndView(model, "confirm.hbs");
         }, new HandlebarsTemplateEngine());
         get("/heroes/:id/delete", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            int deleteHeroId = Integer.parseInt(req.params("id"));
+            int deleteHeroId = Integer.parseInt(req.queryParams("id"));
             Hero deleteHero = Hero.getHeroById(deleteHeroId);
             deleteHero.deleteHeroById();
             return new ModelAndView(model, "confirm.hbs");

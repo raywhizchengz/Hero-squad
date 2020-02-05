@@ -1,0 +1,29 @@
+{{#partial "content"}}
+
+
+    <h1>Add a New Squad</h1>
+    <form action="/posts/squads/new" method="post">
+        <div class="row">
+            <div class="col-md-12">
+                <label for="name">Squad Name</label>
+                <input id="name" name="name" type="text">
+            </div>
+            <div class="col-md-12">
+                <label for="size">Max Size</label>
+                <input id="size" name="size" type="number">
+            </div>
+            <div class="col-md-12">
+
+                <label for="cause">Cause</label>
+                <input id="cause" name="cause" type="text">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-outline-dark btn-lg">Go!</button>
+        <!--            <a href="/posts/squads/new" style="color:darkRed"; class="btn btn-outline-dark btn-lg">Create</a>-->
+
+    </form>
+
+
+{{/partial}}
+
+{{> layout.hbs}}

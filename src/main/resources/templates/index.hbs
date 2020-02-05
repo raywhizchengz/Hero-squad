@@ -1,0 +1,47 @@
+{{#partial "content"}}
+
+    <div class="container-fluid" id="welcome">
+        <h1>WITH GREAT POWER COMES GREAT RESPONSIBILITY. </h1>
+        <h2>Welcome to HOOD HEROES. </h2>
+
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <h3 >Available Squads:</h3>
+                <ul >
+                    {{#each squads}}
+                        <li><a href="/squad-details/{{id}}">{{name}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <div class="col-md-4">
+                <h3 >Available Heroes:</h3>
+                <ul >
+                    {{#each heroes}}
+                        <li><a href="/hero-details/{{id}}">{{name}}</a></li>
+                    {{/each}}
+                </ul>
+
+            </div>
+        </div>
+
+        <h3><u>What brings you here: </u></h3>
+        <div class="row">
+            <div class="col-md-6">
+                <a href="/posts/heroes/new" style="color:Red"; class="btn btn-outline-dark btn-lg">Create A Hero</a>
+            </div>
+            <div class="col-md-6">
+                <a href="/posts/squads/new" style="color:Red"; class="btn btn-outline-dark btn-lg">Create A Squad</a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+{{/partial}}
+{{>layout.hbs}}
