@@ -135,7 +135,7 @@ public class App {
             String cause = req.queryParams("cause");
             int Size = Integer.parseInt(req.queryParams("size"));
             Squad Squad = new Squad(name, cause, Size);
-            model.put("squads", Squad.getAllSquads());
+            model.put("squads", models.Squad.getAllSquads());
             return new ModelAndView(model, "confirm.hbs");
         }, new HandlebarsTemplateEngine());
 
