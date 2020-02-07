@@ -32,8 +32,10 @@ static int getHerokuAssignedPort() {
 
         port(getHerokuAssignedPort());
         staticFileLocation("/public");
-
-
+//        String connectionString = "jdbc:postgresql://localhost:5432/jadle_test"; //!
+//        Sql2o sql2o = new Sql2o(connectionString, null, null); //!
+//        String connectionString =  postgres://nxcgijerelavdf:cae776624c46ded5f45c0e3bc85e45ca5353859a6ba727888dc5fdbd149c5831@ec2-52-203-160-194.compute-1.amazonaws.com:5432/d367b0fs9df1bk
+//        Sql2o sql2o = new Sql2o(connectionString, "nxcgijerelavdf", "postgres://nxcgijerelavdf:cae776624c46ded5f45c0e3bc85e45ca5353859a6ba727888dc5fdbd149c5831@ec2-52-203-160-194.compute-1.amazonaws.com:5432/d367b0fs9df1bk"); //!
 
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
