@@ -1,0 +1,31 @@
+{{#partial}}
+    <h1>Edit Hero Details</h1>
+    <form action="/heroes/{{editHero.id}}/update" method="post">
+        <label for="name">Hero's name</label>
+        <br>
+        <input id="name" name="name" type="text" value="{{editHero.name}}">
+        <br><br>
+        <label for="age">Hero Age</label>
+        <br>
+        <input id="age" name="age" type="number" value="{{editHero.age}}">
+        <br><br>
+        <label for="specialPower">Hero Special Power</label>
+        <br>
+        <input id="specialPower" name="specialPower" type="text" value="{{hero.specialPower}}">
+        <br><br>
+        <label for="weakness">Hero Weakness</label>
+        <br>
+        <input id="weakness" name="weakness" type="text" value="{{editHero.weakness}}">
+        <br><br>
+        <label for="squadId">Update hero's squad:</label>
+        <br>
+        <select id="squadId" name="squadId">
+            {{#each squads}}
+                <option value="{{id}}">{{name}}</option>
+            {{/each}}
+        </select><br>
+        <p>Add a new Squad for the hero?<a href="/heroes/{{id}}/update">Click Here</a></p>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+{{/partial}}
+{{>layout.hbs}}

@@ -1,0 +1,23 @@
+{{#partial}}
+    <h1>Edit squad details</h1>
+    <form action="/squads/{{id}}/update" method="post">
+        <div class="row">
+            <div class="col-md-12">
+                <label for="name">Squad Name</label>
+                <input id="name" name="name" type="text" value="{{name}}">
+            </div>
+            <div class="col-md-12">
+                <label for="size">Max Size</label>
+                <input id="maxSize" name="maxSize" type="number" value="{{maxSize}}">
+            </div>
+            <div class="col-md-12">
+
+                <label for="cause">Cause</label>
+                <input id="cause" name="cause" type="text" value="{{cause}}">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-outline-dark btn-lg">Go!</button>
+    </form>
+
+{{/partial}}
+{{>layout.hbs}}

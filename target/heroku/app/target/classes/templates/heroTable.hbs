@@ -1,0 +1,33 @@
+{{#partial "content"}}
+
+    <h2>Add Hero</h2>
+
+    <form action="/posts/heroes/new" method="post" >
+        <label for="name">Hero Name</label>
+        <input id="name" name="name" type="text" >
+        <br>
+        <label for="age">Hero Age</label>
+        <input id="age" name="age" type="number">
+
+        <br>
+        <label for="specialPower">Hero Special Power</label>
+        <input id="specialPower" name="specialPower" type="text" >
+        <br>
+        <label for="weakness">Hero Weakness</label>
+        <input id="weakness" name="weakness" type="text" >
+        <br>
+        <label for="squadId">Select The Squad for the Hero:</label>
+        <select id="squadId" name="squadId">
+            {{#each squads}}
+                <option value="{{id}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <br><br>
+        <p>Add a new Squad for the hero?<a href="/posts/squads/new">Click Here</a></p>
+
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+
+{{/partial}}
+
+{{> layout.hbs}}
