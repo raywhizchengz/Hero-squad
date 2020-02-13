@@ -14,7 +14,7 @@ He can edit the squads and the heroes as well. He or she can also update the squ
  
  
  MIT License
-Copyright (c) 2019 Ray Chengole
+Copyright (c) 2020 Ray Chengole
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
