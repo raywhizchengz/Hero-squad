@@ -9,8 +9,6 @@ He can edit the squads and the heroes as well. He or she can also update the squ
  Any web browser but i would recommend google chrome
  #### Content information
  raychengole97@gmail.com
- ##### live link
- https://raywhizchengz.github.io/pizza-app.github.io/
 ###### CODEBEAT
 [![codebeat badge](https://codebeat.co/badges/4166c098-5e02-4947-956e-2d6f2d86122f)](https://codebeat.co/projects/github-com-raywhizchengz-hero-squad-feature-dev1)
  
