@@ -1,0 +1,18 @@
+{{#partial "content"}}
+
+    <h1>ALl Heroes</h1>
+    {{#if heroes}}
+        <div class="row">
+            <ul >
+                {{#each heroes}}
+                    <li><a href="/heroInfo{{id}}/:id">{{name}}</a></li>
+                {{/each}}
+            </ul>
+
+        </div>
+    {{else}}
+        <p style="color:white;">No Heroes Yet.</p>
+    {{/if}}
+
+{{/partial}}
+{{> layout.hbs }}

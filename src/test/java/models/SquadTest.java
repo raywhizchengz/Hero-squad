@@ -36,7 +36,8 @@ public class SquadTest {
     public void testSquad_getsAllSquads_true() throws Exception {
         Squad testSquad = new Squad("bandits","banditry",10);
         Squad testSquad1 = new Squad("ninjas","ninjitsu",4);
-        assertEquals(2, Squad.getAllSquads().size());
+        Squad thirdSquad = new Squad("black", "fighters", 3);
+        assertEquals(3, Squad.getAllSquads().size());
     }
     @Test
     public void testSquad_getsSquadById_true() throws Exception {

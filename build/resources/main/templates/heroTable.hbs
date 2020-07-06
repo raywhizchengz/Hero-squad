@@ -18,9 +18,12 @@
         <br>
         <label for="squadId">Select The Squad for the Hero:</label>
         <select id="squadId" name="squadId">
-            {{#each squads}}
-                <option value="{{id}}">{{name}}</option>
-            {{/each}}
+        {{#if squads}}
+          {{#each squads}}
+                        <option value="{{id}}">{{name}}</option>
+                    {{/each}}
+        {{/if}}
+
         </select>
         <br><br>
         <p>Add a new Squad for the hero?<a href="/posts/squads/new">Click Here</a></p>

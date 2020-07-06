@@ -32,7 +32,7 @@ static int getHerokuAssignedPort() {
 
         port(getHerokuAssignedPort());
         staticFileLocation("/public");
-//        String connectionString = "jdbc:postgresql://localhost:5432/jadle_test"; //!
+//        String connectionString = "jdbc:postgresql://postgres://xamonpeoykqevh:158db1191c68f4f6f8609c6d18a263adea41f4e04d919f2bab7abeea47683a3e@ec2-54-161-208-31.compute-1.amazonaws.com:5432/dd7q5fc33eahdf //!
 //        Sql2o sql2o = new Sql2o(connectionString, null, null); //!
 //        String connectionString =  postgres://nxcgijerelavdf:cae776624c46ded5f45c0e3bc85e45ca5353859a6ba727888dc5fdbd149c5831@ec2-52-203-160-194.compute-1.amazonaws.com:5432/d367b0fs9df1bk
 //        Sql2o sql2o = new Sql2o(connectionString, "nxcgijerelavdf", "postgres://nxcgijerelavdf:cae776624c46ded5f45c0e3bc85e45ca5353859a6ba727888dc5fdbd149c5831@ec2-52-203-160-194.compute-1.amazonaws.com:5432/d367b0fs9df1bk"); //!
@@ -40,8 +40,9 @@ static int getHerokuAssignedPort() {
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             ArrayList<Hero> hero = Hero.getAll();
+            ArrayList<Squad> squads = Squad.getAllSquads();
+            model.put("squads", squads);
             model.put("Hero", hero);
-            model.put("Squads", Squad.getAllSquads());
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -56,7 +57,7 @@ static int getHerokuAssignedPort() {
         get("/squads", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             ArrayList<Squad> squad = Squad.getAllSquads();
-            model.put("Squad", squad);
+            model.put("squad", squad);
             model.put("Heroes", Hero.getAll());
             return new ModelAndView(model, "herosquads.hbs");
         }, new HandlebarsTemplateEngine());
@@ -71,13 +72,13 @@ static int getHerokuAssignedPort() {
 
         get("/posts/heroes/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            model.put("squads", Hero.getAll());
+            model.put("heroes", Hero.getAll());
             return new ModelAndView(model, "heroTable.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/posts/squads/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            model.put("squads", Hero.getAll());
+            model.put("squads", Squad.getAllSquads());
             return new ModelAndView(model, "groupsquads.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -148,7 +149,7 @@ static int getHerokuAssignedPort() {
             String name = req.queryParams("name");
             String cause = req.queryParams("cause");
             int Size = Integer.parseInt(req.queryParams("size"));
-            Squad Squad = new Squad(name, cause, Size);
+            Squad newSquad = new Squad(name, cause, Size);
             model.put("squads", models.Squad.getAllSquads());
             return new ModelAndView(model, "confirm.hbs");
         }, new HandlebarsTemplateEngine());

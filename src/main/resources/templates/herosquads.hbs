@@ -2,12 +2,20 @@
     <h1>All Squads</h1>
     <div class="row">
         <ul >
-            {{#each squads}}
-                <li><a href="/squadId"{{id}}">{{name}}</a></li>
-            {{/each}}
+        {{#if squad}}
+         {{#each squad}}
+         <li>{{name}}</li>
+         <li>{{cause}}</li>
+         <li>{{maxSize}}</li>
+
+                        <!--<li><a href="/squadId{{id}}">{{name}}</a></li>-->
+          {{/each}}
+        {{/if}}
+
         </ul>
 
     </div>
 
 {{/partial}}
+
 {{>layout.hbs}}
